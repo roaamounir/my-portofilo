@@ -10,7 +10,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://roaamounir.github.io/my-portofilo",
+  "homepage": "https://roaamounir.github.io/my-portofilo/",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.12",
