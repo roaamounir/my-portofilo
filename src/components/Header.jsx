@@ -7,11 +7,14 @@ function Header() {
   };
 
   return (
-    <header id="Header" className="w-full h-screen relative flex flex-col justify-center items-center">
+    <header
+      id="Header"
+      className="w-full h-screen relative flex flex-col justify-center items-center"
+    >
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: "url('/img2.jpg')",
+          backgroundImage: `url(${import.meta.env.BASE_URL}img2.jpg)`,
           filter: "brightness(0.5) saturate(1.2)",
         }}
       ></div>
