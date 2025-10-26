@@ -11,7 +11,7 @@ function Projects() {
       description:
         "A dynamic weather application that fetches real-time weather data using JavaScript Fetch API. Users can search for any city and view current conditions and 3-day forecast.",
       tech: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Fetch API"],
-      img: "/Weather.png",
+      img: `${import.meta.env.BASE_URL}Weather.png`,
       link: "https://roaamounir.github.io/Weather-App/",
     },
     {
@@ -19,7 +19,7 @@ function Projects() {
       description:
         "A responsive multi-page university website built with HTML5, CSS3, and Bootstrap.It includes sections for academic programs, admissions, news, events, and student services with a modern UI and mobile-friendly layout.",
       tech: ["HTML5", "CSS3", "Java Script", "Bootstrap"],
-      img: "/img5.png",
+      img: `${import.meta.env.BASE_URL}img5.png`,
       link: "https://roaamounir.github.io/University-Website-Design/",
     },
     {
@@ -27,7 +27,7 @@ function Projects() {
       description:
         "A personal portfolio website template built with HTML, CSS, and Bootstrap. It includes sections like About, Portfolio, Services, Contact, and is designed with a professional responsive layout to showcase projects and skills.",
       tech: ["HTML5", "CSS3", "Bootstrap"],
-      img: "/img8.png",
+      img: `${import.meta.env.BASE_URL}img8.png`,
       link: "https://roaamounir.github.io/Devfolio-Portfolio/",
     },
     {
@@ -35,7 +35,7 @@ function Projects() {
       description:
         "A personal portfolio website template built with HTML, CSS, and Bootstrap. It includes sections like About, Portfolio, Services, Contact, and is designed with a professional responsive layout to showcase projects and skills.",
       tech: ["HTML5", "CSS3", "Bootstrap"],
-      img: "/img9.png",
+      img: `${import.meta.env.BASE_URL}img9.png`,
       link: "https://roaamounir.github.io/Daniels-Portfolio/",
     },
     {
@@ -43,8 +43,17 @@ function Projects() {
       description:
         "A modern and responsive single-page website built with HTML, CSS,React, and Bootstrap. Inspired by Route Academy’s Start Framework design, it showcases sections like portfolio, about, and contact with a clean UI/UX.",
       tech: ["HTML5", "CSS3", "Bootstrap", "React"],
-      img: "/img7.png",
+      img: `${import.meta.env.BASE_URL}img7.png`,
       link: "https://clinquant-hamster-085575.netlify.app/",
+    },
+
+    {
+      title: "Book Store",
+      description:
+        "A modern full-stack bookstore application built with React, Node.js/Express, and MongoDB. This project demonstrates a complete e-commerce workflow for books, including browsing, searching, purchasing, and payment integration.",
+      tech: ["React", " Node.js/Express", "MUI", "MongoDB"],
+      img: `${import.meta.env.BASE_URL}bookStore.png`,
+      link: "bookstore-git-main-roaamounir211-2896s-projects.vercel.app",
     },
   ];
 
@@ -78,7 +87,7 @@ function Projects() {
           >
             {projects.map((project) => (
               <SwiperSlide key={project.title}>
-                <div className="bg-[#414833] rounded-2xl shadow-lg overflow-hidden  transition-transform duration-500 flex flex-col h-full min-h-[480px] md:min-h-[500px] lg:min-h-[500px]">
+                <div className="bg-[#414833] rounded-2xl shadow-lg overflow-hidden transition-transform duration-500 flex flex-col h-full min-h-[480px] md:min-h-[500px] lg:min-h-[500px]">
                   <img
                     src={project.img}
                     alt={project.title}
