@@ -1,84 +1,157 @@
-import {
-  FaPaintBrush,
-  FaLaptopCode,
-  FaMobileAlt,
-  FaFigma,
-  FaRocket,
-  FaGithub,
-} from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-function Services() {
-  const services = [
+function Projects() {
+  const projects = [
     {
-      title: "Web Design",
+      title: "Weather App",
       description:
-        "Creating modern, user-friendly, and visually appealing website designs.",
-      icon: FaPaintBrush,
+        "A dynamic weather application that fetches real-time weather data using JavaScript Fetch API. Users can search for any city and view current conditions and 3-day forecast.",
+      tech: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Fetch API"],
+      img: `${import.meta.env.BASE_URL}Weather.png`,
+      link: "https://roaamounir.github.io/Weather-App/",
     },
     {
-      title: "Web Development",
+      title: "University Website Design",
       description:
-        "Building responsive and dynamic websites using HTML, CSS, JavaScript, and React.",
-      icon: FaLaptopCode,
+        "A responsive multi-page university website built with HTML5, CSS3, and Bootstrap.It includes sections for academic programs, admissions, news, events, and student services with a modern UI and mobile-friendly layout.",
+      tech: ["HTML5", "CSS3", "Java Script", "Bootstrap"],
+      img: `${import.meta.env.BASE_URL}img5.png`,
+      link: "https://roaamounir.github.io/University-Website-Design/",
     },
     {
-      title: "Responsive Design",
+      title: "DevFolio Portfolio",
       description:
-        "Ensuring websites look great and function smoothly on all devices and screen sizes.",
-      icon: FaMobileAlt,
+        "A personal portfolio website template built with HTML, CSS, and Bootstrap. It includes sections like About, Portfolio, Services, Contact, and is designed with a professional responsive layout to showcase projects and skills.",
+      tech: ["HTML5", "CSS3", "Bootstrap"],
+      img: `${import.meta.env.BASE_URL}img8.png`,
+      link: "https://roaamounir.github.io/Devfolio-Portfolio/",
     },
     {
-      title: "UI/UX Prototyping",
+      title: "Daniels Portfolio ",
       description:
-        "Turning wireframes into functional and interactive user interfaces using Figma.",
-      icon: FaFigma,
+        "A personal portfolio website template built with HTML, CSS, and Bootstrap. It includes sections like About, Portfolio, Services, Contact, and is designed with a professional responsive layout to showcase projects and skills.",
+      tech: ["HTML5", "CSS3", "Bootstrap"],
+      img: `${import.meta.env.BASE_URL}img9.png`,
+      link: "https://roaamounir.github.io/Daniels-Portfolio/",
     },
     {
-      title: "SEO Optimization",
+      title: "Start Framework",
       description:
-        "Improving website performance and visibility with clean, optimized code.",
-      icon: FaRocket,
+        "A modern and responsive single-page website built with HTML, CSS,React, and Bootstrap. Inspired by Route Academy’s Start Framework design, it showcases sections like portfolio, about, and contact with a clean UI/UX.",
+      tech: ["HTML5", "CSS3", "Bootstrap", "React"],
+      img: `${import.meta.env.BASE_URL}img7.png`,
+      link: "https://clinquant-hamster-085575.netlify.app/",
     },
     {
-      title: "Version Control",
+      title: "Book Store ",
       description:
-        "Managing and collaborating on projects efficiently using Git and GitHub.",
-      icon: FaGithub,
+        "A modern full-stack bookstore application built with React, Node.js/Express, and MongoDB. This project demonstrates a complete e-commerce workflow for books, including browsing, searching, purchasing, and payment integration.",
+      tech: ["React", "Node.js/Express", "MUI", "MongoDB"],
+      img: `${import.meta.env.BASE_URL}bookstore.png`,
+      link: "https://bookstore-git-main-roaamounir211-2896s-projects.vercel.app/register",
+    },
+    {
+      title: "Coffee App",
+      description:
+        "A modern coffee shop web app built with Next.js and styled for a smooth user experience.",
+      tech: ["React", "Next.js", "MUI"],
+      img: `${import.meta.env.BASE_URL}coffee.png`,
+      link: "https://coffee-app-git-main-roaamounir211-2896s-projects.vercel.app/",
     },
   ];
 
   return (
-    <section id="Services" className="w-full py-20 bg-[#333D29] px-20">
-      <h2
-        className="text-4xl font-bold text-center text-[#C2C5AA] mb-12"
-        style={{ fontFamily: "Caveat, cursive" }}
-      >
-        Services.
-      </h2>
+    <section id="projects" className="w-full py-20 bg-[#333D29] px-5 md:px-20">
+      <div className="container mx-auto relative">
+        <h2
+          className="text-4xl font-bold text-center text-[#C2C5AA] mb-12"
+          style={{ fontFamily: "Caveat, cursive" }}
+        >
+          My Projects.
+        </h2>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => {
-          const IconComponent = service.icon;
-          return (
-            <div
-              key={index}
-              className="group bg-[#414833] rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-500 cursor-pointer"
-            >
-              <div className="flex justify-center items-center mb-4">
-                <div className="h-24 w-24 flex items-center justify-center rounded-full bg-[#C2C5AA] shadow-[0_0_0_10px_rgba(194,197,170,0.5)] transition-all duration-500 group-hover:bg-[#333D29]">
-                  <IconComponent className="text-[#333D29] text-4xl transition-colors duration-500 group-hover:text-[#C2C5AA]" />
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={3}
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+            pagination={{ clickable: true }}
+            loop={true}
+            className="pb-10 custom-swiper"
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {projects.map((project) => (
+              <SwiperSlide key={project.title}>
+                <div className="bg-[#414833] rounded-2xl shadow-lg overflow-hidden transition-transform duration-500 flex flex-col h-full min-h-[480px] md:min-h-[500px] lg:min-h-[500px]">
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+
+                  <div className="p-5 flex flex-col gap-3 flex-grow">
+                    <h3 className="text-2xl font-semibold text-[#C2C5AA]">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-[#C2C5AA] text-sm flex-grow">
+                      {project.description}
+                    </p>
+
+                    <p className="text-sm text-[#A3B18A] font-medium">
+                      {project.tech.join(" • ")}
+                    </p>
+
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#C5B67B] hover:text-[#CCC098] font-medium mt-2"
+                    >
+                      View Project →
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-semibold text-[#C2C5AA] mb-2">
-                {service.title}
-              </h3>
-              <p className="text-[#C2C5AA] text-sm">{service.description}</p>
-            </div>
-          );
-        })}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="custom-prev absolute left-[-50px] top-1/2 -translate-y-1/2 text-[#CCC098] cursor-pointer text-3xl z-10">
+            ❮
+          </div>
+          <div className="custom-next absolute right-[-50px] top-1/2 -translate-y-1/2 text-[#CCC098] cursor-pointer text-3xl z-10">
+            ❯
+          </div>
+        </div>
       </div>
+
+      <style>
+        {`
+          .custom-swiper .swiper-pagination-bullet {
+            background: #CCC098 !important;
+            opacity: 0.5;
+          }
+          .custom-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #C5B67B !important;
+          }
+        `}
+      </style>
     </section>
   );
 }
 
-export default Services;
+export default Projects;
