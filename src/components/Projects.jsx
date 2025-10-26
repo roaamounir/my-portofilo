@@ -53,7 +53,7 @@ function Projects() {
         "A modern full-stack bookstore application built with React, Node.js/Express, and MongoDB. This project demonstrates a complete e-commerce workflow for books, including browsing, searching, purchasing, and payment integration.",
       tech: ["React", " Node.js/Express", "MUI", "MongoDB"],
       img: `${import.meta.env.BASE_URL}bookStore.png`,
-      link: "bookstore-git-main-roaamounir211-2896s-projects.vercel.app",
+      link: "https://bookstore-git-main-roaamounir211-2896s-projects.vercel.app",
     },
   ];
 
