@@ -6,9 +6,9 @@ function About() {
     >
       <div className="flex-1 flex justify-center items-center">
         <img
-          src="/img4jpg.jpg"
+          src={`${import.meta.env.BASE_URL}img3.jpg`}
           alt="Roaa Mounir"
-          className="rounded-lg shadow-lg w-84 h-84 object-cover border-1 p-4 border-[#333D29] transition-transform duration-500 hover:scale-105"
+          className="rounded-lg shadow-lg w-[336px] h-[336px] object-cover border p-4 border-[#333D29] transition-transform duration-500 hover:scale-105"
         />
       </div>
 
